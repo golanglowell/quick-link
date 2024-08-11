@@ -25,9 +25,8 @@ func (u URL) Validate() error {
 }
 
 type URLRepository interface {
-	SaveURL(url *URL) error
+	Save(url *URL) error
 	FindByShortCode(shortCode string) (*URL, error)
-	IncrementClicks(shortCode string) error
 }
 
 type ShortCodeGenerator interface {
