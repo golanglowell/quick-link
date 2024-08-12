@@ -2,9 +2,9 @@ package memory
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/golanglowell/quick-link/internal/domain"
-	customerrors "github.com/golanglowell/quick-link/pkg/customErrors"
 )
 
 type URLRepository struct {
@@ -64,7 +64,7 @@ func (u *URLRepository) commandLoop() {
 
 func (u *URLRepository) Save(url *domain.URL) error {
 	if url == nil {
-		return customerrors.ErrURLInvalidInput
+		return fmt.Errorf("invalid input")
 	}
 
 	result := make(chan error)
