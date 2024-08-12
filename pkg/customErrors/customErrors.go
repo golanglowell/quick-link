@@ -1,6 +1,5 @@
-package domain
+package customerrors
 
-// Todo: move
 import "errors"
 
 var (
@@ -9,4 +8,5 @@ var (
 	ErrURLInvalidInput    = errors.New("invalid input")
 	ErrDuplicateShortCode = errors.New("duplicate short code")
 	ErrInternalServer     = errors.New("internal server error")
+	ErrMethodNotAllowed   = errors.New("method not allowed")
 )

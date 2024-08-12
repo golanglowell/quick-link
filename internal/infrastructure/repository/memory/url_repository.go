@@ -4,6 +4,7 @@ import (
 	"errors"
 
 	"github.com/golanglowell/quick-link/internal/domain"
+	customerrors "github.com/golanglowell/quick-link/pkg/customErrors"
 )
 
 type URLRepository struct {
@@ -63,7 +64,7 @@ func (u *URLRepository) commandLoop() {
 
 func (u *URLRepository) Save(url *domain.URL) error {
 	if url == nil {
-		return domain.ErrURLInvalidInput
+		return customerrors.ErrURLInvalidInput
 	}
 
 	result := make(chan error)
