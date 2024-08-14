@@ -25,7 +25,3 @@ func (l *Logger) Info(msg string, args ...any) {
 func (l *Logger) Error(msg string, args ...any) {
 	l.log.Error(msg, args...)
 }
-
-func (l *Logger) With(args ...any) *Logger {
-	return &Logger{log: l.log.With(args...)}
-}
